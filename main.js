@@ -13,6 +13,7 @@ function showDate(timestamp) {
   return `${day} ${hours}:${minutes}`;
 }
 
+
 function showTemperature(response) {
   
   let tempElement = document.querySelector(".temp");
@@ -53,7 +54,7 @@ form.addEventListener("submit", showWeather);
 function showPosition(position) { 
 let coords = document.querySelector("#coords-info"); 
 let cityInputElement = document.querySelector("#city-input"); 
-coords.innerHTML = `${cityInputElement} latitiude is ${position.coords.latitude} and longitude is ${position.coords.longitude}`;
+coords.innerHTML = `${cityInputElement.value} latitiude is ${position.coords.latitude} and longitude is ${position.coords.longitude}`;
 }
 
 function getCurrentPosition() { 
