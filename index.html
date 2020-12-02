@@ -8,7 +8,8 @@
     integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
   <link rel="preconnect" href="https://fonts.gstatic.com">
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
  <div class="app-wrapper">
@@ -17,14 +18,14 @@
   </header>
      <main>
      <section class="location">
-       <div class="city">Nairobi, Kenya</div>
+       <div class="city"></div>
        <div class="date">Wednesday, 02 Dec 2020</div>
      </section>
      <div class="current">
-       <div class="temp">17 <span>°C</span></div>
-       <div class="weather">Cloudy</div>
-       <div id="humidity">Humidity</div>
-       <div id="wind">Wind</div>
+       <div class="temp">°C</div>
+       <div class="weather"></div>
+       <div>Humidity: <span id="humidity"></span>%</div>
+       <div>Wind: <span id="wind"></span>Km/h</div>
      </div>
    </main>
     
