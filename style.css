@@ -71,8 +71,12 @@ main {
 .current .temp {
   font-size: 102px;
   font-weight: 900;
-  margin: 30px 0px;
+  margin: 10px 0;
   text-shadow: 2px 10px rgba(0, 0, 0, 0.6);
+}
+
+img {
+  margin-top: 20px;
 }
 
 .current .temp .units {
