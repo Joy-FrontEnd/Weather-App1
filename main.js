@@ -35,7 +35,20 @@ function showTemperature(response) {
   iconElement.setAttribute("alt", response.data.weather[0].description);
 }
 
+function searchWeather(city) {
 let apiKey = "847fb93bdb350f3f8e4c62e543d7f8f1";
-let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=dubai&appid=${apiKey}&units=metric`;
-console.log(apiUrl);
+let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
 axios.get(apiUrl).then(showTemperature);
+}
+
+function showWeather(event) {
+  event.preventDefault();
+  let cityInputElement = document.querySelector("#city-input");
+  searchWeather(cityInputElement.value);
+  
+}
+
+searchWeather("Nairobi")
+
+let form = document.querySelector("#search-form");
+form.addEventListener("submit", showWeather)
