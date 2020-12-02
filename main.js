@@ -45,10 +45,22 @@ function showWeather(event) {
   event.preventDefault();
   let cityInputElement = document.querySelector("#city-input");
   searchWeather(cityInputElement.value);
-  
 }
 
 searchWeather("Nairobi")
 
 let form = document.querySelector("#search-form");
-form.addEventListener("submit", showWeather)
+form.addEventListener("submit", showWeather);
+
+
+function showPosition(position) { 
+let coords = document.querySelector("#coords-info"); 
+let cityInputElement = document.querySelector("#city-input"); 
+coords.innerHTML = `Your latitiude is ${position.coords.latitude} and longitude is ${position.coords.longitude}`;
+}
+
+function getCurrentPosition() { 
+navigator.geolocation.getCurrentPosition(showPosition);
+}
+let button = document.querySelector(".current-button");
+button.addEventListener("click", getCurrentPosition);

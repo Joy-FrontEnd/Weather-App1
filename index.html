@@ -16,12 +16,16 @@
    <header> 
      <form  id="search-form">
        <div class="row"> 
-         <div class="col-9"> 
+         <div class="col-6"> 
      <input type="search" id="city-input" placeholder="Search for a City..." autocomplete="off" autofocus ="on" class="search-box">
       </div>
       <div class="col-3"> 
      <input type="submit" value="search" class="btn btn-primary"
     >
+      </div>
+    <div class="col-3">
+    <button class="current-button btn btn-primary">Current</button>
+  
     </div>
     </div>
     </form>
@@ -29,11 +33,11 @@
      <main>
      <section class="location">
        <div class="city"></div>
-       <div>Last updated: <span class="date"></span></div>
+       <div id="coords-info">Last updated: <span class="date"></span></div>
      </section>
      <div class="current">
        <img src="" alt="" id="weather-icons">
-       <div class="temp"><span class="units"></span>°C</div>
+       <div><span class="temp"></span><span id="units">°C</span></div>
        <div class="weather"></div>
        <div>Humidity: <span id="humidity"></span>%</div>
        <div>Wind: <span id="wind"></span>Km/h</div>

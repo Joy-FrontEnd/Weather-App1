@@ -79,8 +79,11 @@ img {
   margin-top: 20px;
 }
 
-.current .temp .units {
-  font-weight: 500;
+.current #units {
+  font-weight: 300;
+  font-size: 102px;
+  margin: 10px 0;
+  text-shadow: 2px 10px rgba(0, 0, 0, 0.6);
 }
 
 .current .weather {
@@ -93,4 +96,14 @@ img {
 
 .current .weather::first-letter {
   text-transform: capitalize;
+}
+
+.current-button {
+  background-color: #df8e00;
+  border: none;
+}
+
+.current-button:hover {
+  color: black;
+  background: white;
 }
