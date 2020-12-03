@@ -107,3 +107,8 @@ img {
   color: black;
   background: white;
 }
+
+small {
+  margin: 0 auto;
+  font-size: 20px;
+}
