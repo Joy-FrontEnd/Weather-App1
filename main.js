@@ -23,6 +23,9 @@ function showTemperature(response) {
   let windElement = document.querySelector("#wind");
   let dateElement = document.querySelector(".date");
   let iconElement = document.querySelector("#weather-icons")
+
+  cTemperature = response.data.main.temp;
+
   tempElement.innerHTML = Math.round(response.data.main.temp);
   cityElement.innerHTML = response.data.name;
   weatherElement.innerHTML = response.data.weather[0].description;
@@ -45,7 +48,7 @@ function showWeather(event) {
   searchWeather(cityInputElement.value);
 }
 
-searchWeather("Nairobi")
+
 
 let form = document.querySelector("#search-form");
 form.addEventListener("submit", showWeather);
@@ -62,3 +65,27 @@ navigator.geolocation.getCurrentPosition(showPosition);
 }
 let button = document.querySelector(".current-button");
 button.addEventListener("click", getCurrentPosition);
+
+function showFahrTemp(event) {
+  event.preventDefault();
+  let fTemperature = (cTemperature * 9) /5 + 32;
+  let tempElement = document.querySelector(".temp");
+  tempElement.innerHTML = Math.round(fTemperature);
+}
+
+
+function showCelciusTemp(event) {
+  event.preventDefault();
+  let tempElement = document.querySelector(".temp");
+  tempElement.innerHTML = Math.round(cTemperature);
+}
+
+let cTemperature = null;
+
+let fLink = document.querySelector("#fahr-link");
+fLink.addEventListener("click", showFahrTemp);
+
+let cLink = document.querySelector("#celcius-link");
+cLink.addEventListener("click", showCelciusTemp);
+
+searchWeather("Nairobi");

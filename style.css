@@ -112,3 +112,8 @@ small {
   margin: 0 auto;
   font-size: 20px;
 }
+
+#units a:hover {
+  text-decoration: none;
+  cursor: default;
+}
