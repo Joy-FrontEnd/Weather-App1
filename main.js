@@ -39,7 +39,7 @@ function showTemperature(response) {
   humidityElement.innerHTML = response.data.main.humidity;
   windElement.innerHTML = Math.round(response.data.wind.speed);
   dateElement.innerHTML = showDate(response.data.dt * 1000)
-  iconElement.setAttribute("src", `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`)
+  iconElement.setAttribute("src", `https://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`)
   iconElement.setAttribute("alt", response.data.weather[0].description);
 }
 
@@ -56,7 +56,7 @@ for (let index = 0; index < 3; index++) {
          <h3>
          ${formatHours(forecast.dt * 1000) }
          </h3>
-         <img src="http://openweathermap.org/img/wn/${forecast.weather[0].icon}@2x.png">
+         <img src="https://openweathermap.org/img/wn/${forecast.weather[0].icon}@2x.png">
          <div class="weather-forecast">
            <strong>${Math.round(forecast.main.temp_max)}°</strong> ${Math.round(forecast.main.temp_min)}°
          </div>
@@ -70,7 +70,7 @@ let apiKey = "847fb93bdb350f3f8e4c62e543d7f8f1";
 let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
 axios.get(apiUrl).then(showTemperature);
 
-apiUrl = `http://api.openweathermap.org/data/2.5/forecast?q=${city}&appid=${apiKey}&units=metric`;
+apiUrl = `https://api.openweathermap.org/data/2.5/forecast?q=${city}&appid=${apiKey}&units=metric`;
 axios.get(apiUrl).then(showForecast);
 }
 
@@ -79,8 +79,6 @@ function showWeather(event) {
   let cityInputElement = document.querySelector("#city-input");
   searchWeather(cityInputElement.value);
 }
-
-
 
 let form = document.querySelector("#search-form");
 form.addEventListener("submit", showWeather);
@@ -104,7 +102,6 @@ function showFahrTemp(event) {
   let tempElement = document.querySelector(".temp");
   tempElement.innerHTML = Math.round(fTemperature);
 }
-
 
 function showCelciusTemp(event) {
   event.preventDefault();
